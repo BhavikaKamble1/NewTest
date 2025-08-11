@@ -33,26 +33,32 @@ function hidePopup() {
 
 // Make the No button move only a few times, then stay put for accessibility
 const MAX_MOVES = 3;
-noBtn.addEventListener('mouseover', (e) => {
+
+function moveNoButton() {
   if (noClickCount >= 3 && noClickCount < 3 + MAX_MOVES) {
-    // Move the button to a random position within a limited area
     const container = document.querySelector('.container');
     const rect = container.getBoundingClientRect();
     const btnRect = noBtn.getBoundingClientRect();
-    const maxX = Math.max(10, rect.width - btnRect.width - 30);
-    const maxY = Math.max(10, rect.height - btnRect.height - 30);
+    // On mobile, use smaller movement area
+    const isMobile = window.innerWidth <= 600;
+    const padding = isMobile ? 10 : 30;
+    const maxX = Math.max(5, rect.width - btnRect.width - padding);
+    const maxY = Math.max(5, rect.height - btnRect.height - (isMobile ? 30 : 80));
     const randX = Math.random() * maxX;
-    const randY = Math.random() * maxY + 80;
+    const randY = Math.random() * maxY + (isMobile ? 30 : 80);
     noBtn.style.position = 'absolute';
     noBtn.style.left = `${randX}px`;
     noBtn.style.top = `${randY}px`;
   } else if (noClickCount >= 3 + MAX_MOVES) {
-    // After a few moves, keep the button in place for accessibility
     noBtn.style.position = '';
     noBtn.style.left = '';
     noBtn.style.top = '';
   }
-});
+}
+
+// Use mouseover for desktop, touchstart for mobile
+noBtn.addEventListener('mouseover', moveNoButton);
+noBtn.addEventListener('touchstart', moveNoButton);
 
 
 noBtn.addEventListener('click', () => {
