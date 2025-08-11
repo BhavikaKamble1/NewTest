@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I’m Sorry ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <!-- Top/bottom bars removed; will add inside celebration -->
+  <div class="container">
+    <h1>I'm Sorry, Bhangu Ji ❤️</h1>
+    <p id="main-message">I messed up, and I miss you! Will you forgive me, Bhangu Ji? 🥺💖</p>
+    <div class="gif-area">
+      <img id="main-gif" src="dubu2.gif" alt="Teddy on a scooter" class="main-gif" />
+    </div>
+    <div class="buttons">
+      <button id="accept-btn">I Accept 💖</button>
+      <button id="no-btn">No 😢</button>
+    </div>
+    <div id="cute-popup" class="hidden"></div>
+    <div id="celebration" class="hidden">
+      <div class="scrolling-text celebration-scroll" id="celebration-scroll">
+        <span class="scroll-inner">💖 Bhangu Ji, you are my sunshine, my happiness, my everything! 💖 &nbsp; 💖 Bhangu Ji, you are my sunshine, my happiness, my everything! 💖 &nbsp; </span>
+      </div>
+      <div class="falling-hearts" id="falling-hearts"></div>
+      <div class="teddies" id="celebration-teddies">
+        <!-- Only 3 gifs will be injected here by JS on accept -->
+      </div>
+      <h2>Yay! Thank you, Bhangu Ji! 💕</h2>
+      <div class="celebration-extra">Aaja ab game khele ??</div>
+      <div class="confetti"></div>
+    </div>
+  </div>
+  <!-- bottom-scroll removed -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

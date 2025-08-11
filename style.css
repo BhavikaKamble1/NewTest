@@ -1,0 +1,204 @@
+/* Celebration teddies row */
+.teddies {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.3rem;
+  margin-bottom: 0.3rem;
+  margin-top: 0.1rem;
+}
+
+/* Celebration gif size */
+.celebration-gif {
+  width: 56px;
+  max-width: 15vw;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(255,192,203,0.13);
+  background: #fff8fa;
+  margin: 0.05rem 0.1rem;
+  animation: popIn 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* Celebration box scrolling text */
+.celebration-scroll {
+  width: 90%;
+  margin: 1.1rem auto 0.3rem auto;
+  overflow: hidden;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.08rem;
+  color: #ff6f91;
+  background: #fff0f6;
+  padding: 0.28rem 0;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(255,192,203,0.08);
+  position: relative;
+  z-index: 2;
+}
+.scroll-inner {
+  display: inline-block;
+  min-width: 200%;
+  white-space: nowrap;
+  animation: scroll-loop 18s linear infinite;
+}
+@keyframes scroll-loop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Falling hearts effect for celebration */
+.falling-hearts {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+.falling-heart {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0.85;
+  animation: fall-heart 2.7s linear forwards;
+  filter: drop-shadow(0 0 8px #ffb7c5);
+}
+@keyframes fall-heart {
+  0% { transform: translateY(-30px) scale(1.1) rotate(-10deg); opacity: 0.7; }
+  80% { opacity: 1; }
+  100% { transform: translateY(340px) scale(1.2) rotate(10deg); opacity: 0; }
+}
+/* Main gif area styling */
+.gif-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.main-gif {
+  width: 120px;
+  max-width: 80vw;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(255,192,203,0.18);
+  background: #fff8fa;
+  animation: popIn 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+body {
+  background: linear-gradient(135deg, #ffe0ec 0%, #b5ead7 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Indie Flower', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #fff8fa;
+  border-radius: 32px;
+  box-shadow: 0 4px 32px rgba(255, 192, 203, 0.2);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  color: #ff6f91;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #ffe0ec;
+}
+
+#main-message {
+  color: #6c5b7b;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 24px;
+  background: #ffd6e0;
+  color: #ff6f91;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 192, 203, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+button#accept-btn {
+  background: #b5ead7;
+  color: #3aafa9;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+#cute-popup {
+  background: #fff0f6;
+  border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(255, 192, 203, 0.18);
+  padding: 1.2rem 1rem;
+  color: #ff6f91;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  min-height: 60px;
+}
+
+.hidden {
+  display: none;
+}
+
+#celebration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: fadeIn 0.7s;
+  box-shadow: 0 8px 32px rgba(255,192,203,0.18);
+  padding-bottom: 2.5rem;
+}
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  /* .teddy-gif, .celebration-gif { width: 70px; max-width: 40vw; } */
+  .scrolling-text {
+    font-size: 0.9rem;
+  }
+}
