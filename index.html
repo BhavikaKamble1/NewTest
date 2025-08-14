@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I’m Sorry ❤️</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     .hidden { display: none !important; }
   </style>
@@ -34,6 +34,22 @@
       <h2>Yay! Thank you, Bhangu Ji! 💕</h2>
       <div class="celebration-extra">Aaja ab game khele ??</div>
       <div class="confetti"></div>
+    </div>
+    <button id="launch-game-btn" class="cute-btn" style="margin: 2rem auto 0 auto; display: block;">🎮 Play Game for Bhangu Ji!</button>
+    <div id="game-section" class="hidden">
+      <div class="game-hearts-bg" id="game-hearts-bg"></div>
+  <div id="floating-teddy">🧸</div>
+      <h2>Flappy Teddy Game 🐻</h2>
+      <div id="flappy-container" style="position:relative;">
+        <canvas id="bg-canvas" width="320" height="480" style="position:absolute;left:0;top:0;z-index:0;"></canvas>
+        <canvas id="flappy-canvas" width="320" height="480" style="position:relative;z-index:1;"></canvas>
+        <div id="game-over" class="hidden">
+          <div id="score-msg"></div>
+          <button id="play-again">Play Again</button>
+        </div>
+      </div>
+      <div id="reward-msg" class="reward-msg"></div>
+    </div>
     </div>
   </div>
   <!-- bottom-scroll removed -->
